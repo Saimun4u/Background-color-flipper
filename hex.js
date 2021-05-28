@@ -5,16 +5,21 @@ const color = document.querySelector('.color');
 
 btn.addEventListener('click', () => {
 
-    let randNumber = Math.floor(Math.random() * hex.length);
+    let hexColor = '#';
 
     for (let i = 0; i <= 5; i++){
 
-        let hexColor = 0;
 
-         hexColor[i] += `${hex[randNumber]}`
+        let randNumber = Math.floor(Math.random() * hex.length);
 
-         console.log(hexColor)
+         hexColor += `${hex[randNumber]}`
 
     }
+
+    console.log(hexColor.toString());
+
+    document.body.style.background = `${hexColor}`;
+
+    color.textContent = hexColor;
     
 })
